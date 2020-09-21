@@ -2,22 +2,49 @@
 
 A list of procedures to ensure that the local environment is operating at its full potential.
 
-## Update Global Node Packages
+## Update Homebrew and its packages
 
-TLDR: Update all global packages by running the following in the terminal:
+First update the formulae and Homebrew itself:
 
 ```sh
-npm update -g
+brew update
 ```
-or,
 
-To check which packages have available updates run:
+You can now find out what is outdated with:
+
+```sh
+brew outdated
+```
+
+Upgrade everything with:
+
+```sh
+brew upgrade
+```
+
+Or,
+
+Upgrade a specific formula with:
+```sh
+brew upgrade <formula>
+```
+
+## Update Global Node Packages
+
+Check which packages have available updates with:
 
 ```sh
 npm outdated -g --depth=0
 ```
 
-To update a specific package, run:
+Update all global packages with:
+
+```sh
+npm update -g
+```
+Or,
+
+Update a specific package with:
 
 ```sh
 npm update -g <package>
