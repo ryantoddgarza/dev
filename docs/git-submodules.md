@@ -38,16 +38,15 @@ rm -r .git/modules/pack/plugins/start/reponame
 To update an individual plugin:
 
 ```
-cd ~/.vim/pack/plugins/start/reponame
-git pull origin master
+git submodule update --remote --merge <filepath>
 ```
 
 To update all plugins:
 
 ```
-cd ~/.vim
-git submodule foreach git pull origin master
+git submodule update --remote --merge
 ```
+
 **Note that new commits to plugins create uncommitted changes in the main repository. Thus, after any updates in the submodules, you need to commit the main repository as well.**
 
 ## Replicating the repository on a machine
@@ -57,3 +56,9 @@ Clone the repository recursively to clone plugins:
 ```
 git clone --recurse-submodules https://github.com/your_username/your_reponame.git
 ```
+
+## Ignore changes in a submodule
+
+Some plugins need to generate files that will make the working tree dirty. This can be resolved by locating the appropriate `.gitmodules` file and adding `ignore = dirty` to the responsible repo.
+
+[Git Documentation](https://www.git-scm.com/docs/gitmodules#Documentation/gitmodules.txt-submoduleltnamegtignore)
