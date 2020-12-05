@@ -1,9 +1,4 @@
-node_modules
-dist
-
-# General
 .DS_Store
-
-# Vim
-.viminfo
-.netrwhist
+node_modules
+build/
+dist/
